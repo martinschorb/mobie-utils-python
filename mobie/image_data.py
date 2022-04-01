@@ -186,7 +186,7 @@ def add_image(input_path, input_key,
     if move_only:
         shutil.move(input_path, data_path)
         if "bdv." in file_format:
-            shutil.move(os.path.splitext(input_path)[0]+".xml", image_metadata_path)
+            shutil.copy(os.path.splitext(input_path)[0]+".xml", image_metadata_path)
 
     else:
         import_image_data(input_path, input_key, data_path,
