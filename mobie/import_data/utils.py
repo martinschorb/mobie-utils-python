@@ -97,6 +97,7 @@ def downscale(in_path, in_key, out_path,
              metadata_format=metadata_format, metadata_dict=metadata_dict,
              output_path=out_path, output_key_prefix=out_key,
              int_to_uint=int_to_uint)
+
     ret = luigi.build([t], local_scheduler=True)
     if not ret:
         raise RuntimeError("Downscaling failed")
